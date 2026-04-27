@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI on the Yacht – Cannes Film Festival 2025</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: Georgia, serif;
+    background: #000;
+    color: #fff;
+    overflow-x: hidden;
+  }
+
+  /* ── HERO ── */
+  .hero {
+    position: relative;
+    height: 100vh;
+    min-height: 640px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    overflow: hidden;
+  }
+  .hero-bg {
+    position: absolute;
+    inset: 0;
+    background: url('antisan-yacht-charter-cannes-34.jpg') center top / cover no-repeat;
+    filter: brightness(0.42);
+  }
+  .hero-content {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 28px;
+    padding: 2rem;
+  }
+  .hero-content img.logo {
+    width: 220px;
+    height: auto;
+    display: block;
+  }
+  .hero-date {
+    font-family: sans-serif;
+    font-size: 13px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: #4DC8E8;
+  }
+  .hero-headline {
+    font-size: clamp(30px, 5vw, 54px);
+    font-weight: 400;
+    line-height: 1.15;
+    color: #fff;
+  }
+  .hero-sub {
+    font-size: 17px;
+    font-style: italic;
+    color: rgba(255,255,255,0.7);
+  }
+  .scroll-hint {
+    position: absolute;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    color: rgba(255,255,255,0.35);
+    font-family: sans-serif;
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+  }
+  .scroll-arrow {
+    width: 16px;
+    height: 16px;
+    border-right: 1px solid rgba(255,255,255,0.3);
+    border-bottom: 1px solid rgba(255,255,255,0.3);
+    transform: rotate(45deg);
+    animation: bounce 1.8s infinite;
+  }
+  @keyframes bounce {
+    0%, 100% { transform: rotate(45deg) translateY(0); }
+    50% { transform: rotate(45deg) translateY(5px); }
+  }
+
+  /* ── BUTTONS ── */
+  .btn {
+    display: inline-block;
+    padding: 0.8rem 2.2rem;
+    border: 1.5px solid #4DC8E8;
+    color: #4DC8E8;
+    font-family: sans-serif;
+    font-size: 13px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    text-decoration: none;
+    border-radius: 50px;
+    transition: background 0.2s, color 0.2s;
+    cursor: pointer;
+    background: transparent;
+  }
+  .btn:hover { background: #4DC8E8; color: #000; }
+  .btn-filled {
+    background: #4DC8E8;
+    color: #000;
+    font-weight: 700;
+    border-color: #4DC8E8;
+  }
+  .btn-filled:hover { background: #7CDCF2; border-color: #7CDCF2; color: #000; }
+
+  /* ── EXPERIENCE SECTION ── */
+  .section {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 5rem 2rem;
+    border-top: 0.5px solid rgba(255,255,255,0.1);
+  }
+  .section-eyebrow {
+    font-family: sans-serif;
+    font-size: 11px;
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    color: #4DC8E8;
+    margin-bottom: 1rem;
+  }
+  .section-title {
+    font-size: clamp(26px, 4vw, 38px);
+    font-weight: 400;
+    color: #fff;
+    margin-bottom: 1.25rem;
+    line-height: 1.2;
+  }
+  .section-body {
+    font-size: 17px;
+    line-height: 1.85;
+    color: rgba(255,255,255,0.68);
+    max-width: 600px;
+  }
+  .rule { width: 40px; height: 1px; background: #4DC8E8; margin: 1.5rem 0; }
+
+  .cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+    gap: 14px;
+    margin-top: 2.5rem;
+  }
+  .card {
+    border: 0.5px solid rgba(77,200,232,0.3);
+    border-radius: 12px;
+    padding: 1.4rem 1.2rem;
+    background: rgba(77,200,232,0.05);
+  }
+  .card-label {
+    font-family: sans-serif;
+    font-size: 10px;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: #4DC8E8;
+    margin-bottom: 6px;
+  }
+  .card-value {
+    font-size: 18px;
+    color: #fff;
+    line-height: 1.4;
+  }
+
+  /* ── PARTNERS ── */
+  .partners-section {
+    border-top: 0.5px solid rgba(255,255,255,0.1);
+    padding: 3.5rem 2rem;
+    text-align: center;
+  }
+  .partners-inner { max-width: 700px; margin: 0 auto; }
+  .partners-thanks {
+    font-family: sans-serif;
+    font-size: 12px;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.4);
+    margin-bottom: 1.5rem;
+  }
+  .partners-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+  }
+  .partner-pill {
+    border: 0.5px solid rgba(77,200,232,0.35);
+    border-radius: 50px;
+    padding: 0.5rem 1.4rem;
+    font-family: sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    color: rgba(255,255,255,0.85);
+    letter-spacing: 0.05em;
+    background: rgba(77,200,232,0.05);
+  }
+
+  /* ── RSVP ── */
+  .rsvp {
+    text-align: center;
+    padding: 5rem 2rem 6rem;
+    border-top: 0.5px solid rgba(255,255,255,0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+  }
+  .rsvp-logo { width: 140px; height: auto; opacity: 0.9; }
+
+  /* ── FOOTER ── */
+  .footer {
+    text-align: center;
+    padding: 2rem;
+    font-family: sans-serif;
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    color: rgba(255,255,255,0.25);
+    border-top: 0.5px solid rgba(255,255,255,0.08);
+  }
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-content">
+    <img class="logo" src="Ai_on_the_YACHT-Logo-1-03__1_.png" alt="AI on the Yacht" />
+    <p class="hero-date">Cannes Film Festival &nbsp;·&nbsp; May 15, 2025</p>
+    <h1 class="hero-headline">Where AI Meets<br>the French Riviera</h1>
+    <p class="hero-sub">An exclusive evening on the water</p>
+    <a class="btn btn-filled" href="#rsvp">Request an Invitation</a>
+  </div>
+  <div class="scroll-hint">
+    <span>Discover</span>
+    <div class="scroll-arrow"></div>
+  </div>
+</div>
+
+<!-- EXPERIENCE -->
+<div class="section">
+  <p class="section-eyebrow">The Experience</p>
+  <h2 class="section-title">An evening unlike any other</h2>
+  <div class="rule"></div>
+  <p class="section-body">Join us aboard a private luxury yacht during the world's most prestigious film festival. AI on the Yacht brings together visionaries from entertainment, technology, and venture capital for an intimate evening of conversation, connection, and the finest views on the Côte d'Azur.</p>
+  <div class="cards">
+    <div class="card">
+      <div class="card-label">Date</div>
+      <div class="card-value">Thursday<br>May 15, 2025</div>
+    </div>
+    <div class="card">
+      <div class="card-label">Time</div>
+      <div class="card-value">4:30 PM –<br>8:30 PM</div>
+    </div>
+    <div class="card">
+      <div class="card-label">Location</div>
+      <div class="card-value">Cannes<br>Film Festival</div>
+    </div>
+    <div class="card">
+      <div class="card-label">Format</div>
+      <div class="card-value">Private<br>Luxury Yacht</div>
+    </div>
+  </div>
+</div>
+
+<!-- PARTNERS -->
+<div class="partners-section">
+  <div class="partners-inner">
+    <p class="partners-thanks">With thanks to our partners</p>
+    <div class="partners-grid">
+      <span class="partner-pill">Tunnel</span>
+      <span class="partner-pill">AI on the Lot</span>
+      <span class="partner-pill">FBRC.ai</span>
+      <span class="partner-pill">Stage32</span>
+    </div>
+  </div>
+</div>
+
+<!-- RSVP -->
+<div class="rsvp" id="rsvp">
+  <img class="rsvp-logo" src="Ai_on_the_YACHT-Logo-1-03__1_.png" alt="AI on the Yacht" />
+  <p class="section-eyebrow" style="margin:0;">Attendance is by invitation only</p>
+  <h2 class="section-title" style="margin:0;">Space is strictly limited</h2>
+  <p class="section-body" style="text-align:center; margin:0;">To request your place aboard, reach out to our team directly. We look forward to welcoming you.</p>
+  <a class="btn btn-filled" href="mailto:info@aiontheyacht.com">Request an Invitation</a>
+</div>
+
+<div class="footer">© 2025 AI on the Yacht &nbsp;·&nbsp; Cannes Film Festival &nbsp;·&nbsp; All rights reserved</div>
+
+</body>
+</html>
