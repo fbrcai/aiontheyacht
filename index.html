@@ -201,18 +201,30 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 12px;
+    gap: 24px;
+    align-items: center;
   }
-  .partner-pill {
-    border: 0.5px solid rgba(77,200,232,0.35);
-    border-radius: 50px;
-    padding: 0.5rem 1.4rem;
-    font-family: sans-serif;
-    font-size: 14px;
-    font-weight: 500;
-    color: rgba(255,255,255,0.85);
-    letter-spacing: 0.05em;
-    background: rgba(77,200,232,0.05);
+  .partner-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.2rem 0.4rem;
+    text-decoration: none;
+    transition: opacity 0.2s ease, transform 0.2s ease;
+  }
+  .partner-link:hover {
+    opacity: 0.9;
+    transform: translateY(-1px);
+  }
+  .partner-logo {
+    display: block;
+    width: auto;
+    max-width: 180px;
+    max-height: 34px;
+    object-fit: contain;
+  }
+  .partner-logo-dark {
+    filter: brightness(0) invert(1);
   }
 
   /* ── RSVP ── */
@@ -288,10 +300,21 @@
   <div class="partners-inner">
     <p class="partners-thanks">With thanks to our partners</p>
     <div class="partners-grid">
-      <span class="partner-pill">Tunnel</span>
-      <span class="partner-pill">AI on the Lot</span>
-      <span class="partner-pill">FBRC.ai</span>
-      <span class="partner-pill">Stage32</span>
+      <a class="partner-link" href="https://tunnel-inc.com/" target="_blank" rel="noopener noreferrer" aria-label="Tunnel">
+        <img class="partner-logo" src="Tunnel_Logo_NoRay_Thick.png" alt="Tunnel" />
+      </a>
+      <a class="partner-link" href="https://www.aionthelot.com" target="_blank" rel="noopener noreferrer" aria-label="AI on the Lot">
+        <img class="partner-logo" src="AIOTL logo  - white.png" alt="AI on the Lot" />
+      </a>
+      <a class="partner-link" href="https://www.fbrc.ai" target="_blank" rel="noopener noreferrer" aria-label="FBRC.ai">
+        <img class="partner-logo" src="FBRC_Horizontal_Lockup_RichBlack.png" alt="FBRC.ai" />
+      </a>
+      <a class="partner-link" href="https://www.stage32.com" target="_blank" rel="noopener noreferrer" aria-label="Stage32">
+        <img class="partner-logo" src="stage32.png" alt="Stage32" />
+      </a>
+      <a class="partner-link" href="https://www.newhollywood.com/" target="_blank" rel="noopener noreferrer" aria-label="New Hollywood">
+        <img class="partner-logo" src="new-hollywood_abbreviated-logo_square.png" alt="New Hollywood" />
+      </a>
     </div>
   </div>
 </div>
